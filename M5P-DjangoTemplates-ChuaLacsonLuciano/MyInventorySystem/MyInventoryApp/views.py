@@ -12,4 +12,5 @@ def view_supplier(request):
     return render(request, 'MyInventoryApp/view_supplier.html', {'supplier':supplier_objects})
 
 def add_bottle(request):
-    return render(request, 'MyInventoryApp/add_bottle.html')
+    supplier_objects = Supplier.objects.all()
+    return render(request, 'MyInventoryApp/add_bottle.html', {'supplier':supplier_objects})
